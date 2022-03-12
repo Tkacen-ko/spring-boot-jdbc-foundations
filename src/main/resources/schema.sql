@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(256),
+    age INT
+);
