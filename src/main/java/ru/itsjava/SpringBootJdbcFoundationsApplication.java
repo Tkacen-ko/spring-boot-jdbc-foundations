@@ -19,19 +19,21 @@ public class SpringBootJdbcFoundationsApplication {
 
         UserDao userDao = context.getBean(UserDao.class);
 
-        System.out.println("studentDao.count() = " + userDao.count());
+        System.out.println("userDao.count() = " + userDao.count());
 
         User user = new User("Kola", 41);
         userDao.insert(user);
 
-        System.out.println("studentDao.count() = " + userDao.count());
+        System.out.println("userDao.count() = " + userDao.count());
 
         User updateUser = new User("PAVELITEL", 300);
         updateUser.setId(2L);
         userDao.updateUser(updateUser);
 
+        System.out.println("userDao.findById(2L) = " + userDao.findById(2L));
+
         userDao.delete(updateUser);
-        System.out.println("studentDao.count() = " + userDao.count());
+        System.out.println("userDao.count() = " + userDao.count());
 
         Console.main(args);
     }
