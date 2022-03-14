@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void updateUser(User user) {
+    public void update(User user) {
         Map<String, Object> params = Map.of("id", user.getId(), "name", user.getName(), "age", user.getAge());
         jdbc.update("update user set name = :name where id =:id", params);
         jdbc.update("update user set age = :age where id =:id", params);
