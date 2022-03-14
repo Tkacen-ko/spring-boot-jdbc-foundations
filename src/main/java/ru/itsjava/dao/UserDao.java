@@ -1,4 +1,4 @@
-package ru.itsjava.dap;
+package ru.itsjava.dao;
 
 import ru.itsjava.domain.User;
 
@@ -6,7 +6,7 @@ public interface UserDao {
 
     int count();
 
-    void insert(User user);
+    long insert(User user);
 
     void update(User user);
 
