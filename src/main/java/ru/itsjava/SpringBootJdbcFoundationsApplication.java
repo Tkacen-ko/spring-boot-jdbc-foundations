@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import ru.itsjava.domain.Pet;
 import ru.itsjava.domain.User;
+import ru.itsjava.services.AppService;
 import ru.itsjava.services.UserService;
 
 import java.sql.SQLException;
@@ -15,8 +16,6 @@ import java.sql.SQLException;
 public class SpringBootJdbcFoundationsApplication {
     public static void main(String[] args) throws SQLException {
         ApplicationContext applicationContext = SpringApplication.run(SpringBootJdbcFoundationsApplication.class, args);
-        applicationContext.getBean(UserService.class)
-                .insert(new User("bora", 31, new Pet(1L, "Bolonka")));
-        Console.main(args);
+        applicationContext.getBean(AppService.class).start();
     }
 }
