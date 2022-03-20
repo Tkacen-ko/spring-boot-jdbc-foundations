@@ -45,9 +45,9 @@ public class AppServiceImpl implements AppService {
         String pet = ioService.input();
         Pet userPet = petDao.findByBreed(pet);
 
-        User user = new User(name, age, userPet);
-
-        userService.insert(user);
+//        User user = new User(name, age, userPet);
+//
+//        userService.insert(user);
     }
 
     public void printAllUser() {

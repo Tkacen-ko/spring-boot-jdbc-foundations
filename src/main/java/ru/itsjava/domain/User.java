@@ -2,14 +2,23 @@ package ru.itsjava.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@Data
-@RequiredArgsConstructor
+import javax.persistence.*;
+
+
 @AllArgsConstructor
-public class User {
+@Data
+@Entity(name = "user")
+@NoArgsConstructor
+public class User{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private final String name;
-    private final int age;
-    private final Pet pet;
+    private String name;
+    private int age;
+
+    @ManyToOne(targetEntity = Pet.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "pet_id")
+    private Pet pet;
 }
