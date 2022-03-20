@@ -16,9 +16,8 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<User> findAll() {
-        return null;
-//                entityManager
-//                .createQuery("select u from user join u.pet", User.class)
-//                .getResultList();
+        return entityManager
+                .createQuery("select u from user u join u.pet", User.class)
+                .getResultList();
     }
 }

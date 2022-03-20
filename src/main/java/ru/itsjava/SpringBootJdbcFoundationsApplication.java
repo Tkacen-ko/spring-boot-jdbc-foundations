@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import ru.itsjava.domain.Pet;
 import ru.itsjava.repository.PetRepository;
+import ru.itsjava.repository.UserRepository;
 //import ru.itsjava.repository.UserRepository;
 
 import java.sql.SQLException;
@@ -31,8 +32,8 @@ public class SpringBootJdbcFoundationsApplication {
         petRepository.deleteBuId(3L);
         System.out.println("petRepository.getById(3L) = " + petRepository.getById(3L));
 
-//        UserRepository userRepository = applicationContext.getBean(UserRepository.class);
-//        System.out.println("userRepository.findAll() = " + userRepository.findAll());
-//        //Console.main(args);
+        UserRepository userRepository = applicationContext.getBean(UserRepository.class);
+        System.out.println("userRepository.findAll() = " + userRepository.findAll());
+        //Console.main(args);
     }
 }
