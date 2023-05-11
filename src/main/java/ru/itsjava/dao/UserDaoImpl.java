@@ -39,9 +39,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void update(User user) {
-        Map<String, Object> params = Map.of("id", user.getId(), "name", user.getName(), "age", user.getAge());
+        Map<String, Object> params = Map.of("id", user.getId(), "name", user.getName(), "age", user.getAge(), "pet_id", user.getPet().getId());
         jdbc.update("update user set name = :name where user.id =:id", params);
         jdbc.update("update user set age = :age where user.id =:id", params);
+        jdbc.update("update user set pet_id = :pet_id where user.id =:id", params);
     }
 
     @Override
@@ -65,8 +66,8 @@ public class UserDaoImpl implements UserDao {
 
         @Override
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-            return new User(rs.getLong("UID"), rs.getString("name"), rs.getInt("age"),
-                    new Pet(rs.getLong("PID"), rs.getString("breed")));
+            return new User(rs.getLong("id"), rs.getString("name"), rs.getInt("age"),
+                    new Pet(rs.getLong("id"), rs.getString("breed")));
         }
     }
 }

@@ -15,7 +15,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void insert(User user) {
         long id = userDao.insert(user);
-        System.out.println("ID нового студента = " + id);
     }
 
     @Override

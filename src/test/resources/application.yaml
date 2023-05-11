@@ -1,4 +1,4 @@
 spring:
   sql:
     init:
-      data-location: data.sql
+      data-locations: data.sql
