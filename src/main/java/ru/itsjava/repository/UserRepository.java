@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface UserRepository {
     List<User> findAll();
-    User getById(Long id);
+    User getById(long id);
 }

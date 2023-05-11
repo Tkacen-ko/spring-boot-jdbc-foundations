@@ -3,7 +3,7 @@ package ru.itsjava.repository;
 import ru.itsjava.domain.Pet;
 
 public interface PetRepository {
-    Pet getById(Long id);
+    Pet getById(long id);
 
     void insert(Pet genre);
 

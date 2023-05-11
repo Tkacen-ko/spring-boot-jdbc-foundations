@@ -7,16 +7,18 @@ import ru.itsjava.domain.Pet;
 import ru.itsjava.domain.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Transactional
 @Repository
 @RequiredArgsConstructor
-@Transactional
 public class UserRepositoryImpl implements UserRepository {
+    @PersistenceContext
     private final EntityManager entityManager;
 
     @Override
-    public User getById(Long id) {
+    public User getById(long id) {
         return entityManager.find(User.class, id);
     }
 
